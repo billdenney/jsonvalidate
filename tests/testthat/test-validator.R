@@ -838,9 +838,9 @@ test_that("2020-12 $dynamicRef resolves to a $dynamicAnchor at the root", {
 ## "$dynamicRef": "#meta", whose only "$dynamicAnchor" is inside $defs.
 ## Ajv resolves a $dynamicRef to the resource root instead of an anchor
 ## declared below it (ajv issue 1745, open), so the bundled Ajv rejects
-## valid instances of schemas shaped this way.  These expectations
-## record that limitation; when a bundled Ajv resolves the anchor, the
-## first one fails and should become expect_true().
+## valid instances of schemas shaped this way.  The first expectation
+## pins that limitation, so a bundled Ajv that resolves the anchor fails
+## it.
 test_that("2020-12 $dynamicAnchor below the root is not resolved (ajv limitation)", {
   schema <- '{
     "$schema": "https://json-schema.org/draft/2020-12/schema",
