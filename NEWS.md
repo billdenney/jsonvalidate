@@ -1,3 +1,7 @@
+# jsonvalidate (development version)
+
+* A property *named* `$ref` (as in the OpenAPI 3.0 and 3.1 metaschemas) is no longer read as a reference to another schema file; only string `$ref` values are references.
+
 # jsonvalidate 1.4.1
 
 * Add support for subfolders in nested schema references. (#61)

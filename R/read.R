@@ -135,9 +135,21 @@ read_meta_schema_version <- function(schema, v8) {
 }
 
 
+## A schema may define a property *named* "$ref", as the OpenAPI
+## metaschemas do for their Reference and PathItem objects; its value is
+## a subschema, not a reference.  Only string values are references, so
+## the others are dropped before any is read as a file.
 find_schema_dependencies <- function(schema, v8) {
-  v8$call("find_reference", V8::JS(schema))
+  v8$call(find_string_references, V8::JS(schema))
 }
+
+
+find_string_references <- V8::JS(paste(
+  "function(x) {",
+  "  return find_reference(x).filter(function(d) {",
+  "    return typeof d === 'string';",
+  "  });",
+  "}"))
 
 
 check_schema_versions <- function(schema, dependencies) {
