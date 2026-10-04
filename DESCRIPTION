@@ -29,9 +29,9 @@ Suggests:
     rmarkdown,
     testthat,
     withr
-RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr
 Encoding: UTF-8
 Language: en-GB
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.0
