@@ -1,4 +1,4 @@
-# jsonvalidate (development version)
+# jsonvalidate 1.5.1
 
 * The bundled validators are updated to Ajv 8.20.0 and is-my-json-valid 2.20.6, and every JavaScript build dependency to its newest release; the bundle is still ES5, and building it now checks that.
 * A property *named* `$ref` (as in the OpenAPI 3.0 and 3.1 metaschemas) is no longer read as a reference to another schema file; only string `$ref` values are references.
